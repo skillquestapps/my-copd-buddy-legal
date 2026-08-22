@@ -7,13 +7,13 @@
   @AppStorage preferences in SettingsView.swift, and the single outbound
   request in AirQualityService.swift.
 
-  Drop this into the skillquestapps.github.io legal repo as its own page —
+  Drop this into the skillquestapps.github.io legal repo as its own page;
   it is NOT the Respiratory Study Buddy policy and the two are not
   interchangeable. Then set AboutContent.privacyPolicyURL in the app, and
   use the same URL in App Store Connect.
 
   Published at https://skillquestapps.github.io/my-copd-buddy-legal/privacy.html
-  from the my-copd-buddy-legal repo — this file is the source of truth; edit it
+  from the my-copd-buddy-legal repo. This file is the source of truth; edit it
   here and copy it over. One thing left to add: the "delete all my data"
   sentence, once that control exists in the app.
 -->
@@ -32,14 +32,8 @@
     color: #1a140f;
     background: #f5f1ea;
   }
-  @media (prefers-color-scheme: dark) {
-    body { color: #f5f0e6; background: #17120f; }
-    a { color: #6cbac6; }
-    .note { background: #241d18; border-color: #3d3329; }
-  }
   h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .35rem; }
   .meta { color: #6b6154; margin: 0 0 2rem; }
-  @media (prefers-color-scheme: dark) { .meta { color: #c0b6a7; } }
   h2 { font-size: 1.25rem; margin: 2.25rem 0 .6rem; }
   ul { padding-left: 1.25rem; }
   li { margin: .35rem 0; }
@@ -52,7 +46,19 @@
     margin: 1.5rem 0;
   }
   footer { margin-top: 3rem; color: #6b6154; font-size: .95rem; }
-  @media (prefers-color-scheme: dark) { footer { color: #c0b6a7; } }
+  /* All dark-mode overrides live in this one block, placed last, so they
+     win the cascade at equal specificity regardless of where the base
+     rule above appears. Splitting these into several earlier @media
+     blocks (the previous layout) let a later base rule silently win
+     instead — that's how .note ended up a white box with near-white
+     text in dark mode. */
+  @media (prefers-color-scheme: dark) {
+    body { color: #f5f0e6; background: #17120f; }
+    a { color: #6cbac6; }
+    .meta { color: #c0b6a7; }
+    .note { background: #241d18; border-color: #3d3329; }
+    footer { color: #c0b6a7; }
+  }
 </style>
 </head>
 <body>
@@ -77,7 +83,7 @@
   <li>Flare-up records</li>
   <li>Preferences: the name shown in your greeting, whether voice guidance is on, whether medication names are hidden on the lock screen, and your saved Air Quality ZIP codes</li>
 </ul>
-<p>None of this is transmitted to us. We cannot see it, and there is nowhere for it to be uploaded to — the app has no backend service.</p>
+<p>None of this is transmitted to us. We cannot see it, and there is nowhere for it to be uploaded to; the app has no backend service.</p>
 
 <h2>The one thing that leaves your phone</h2>
 <p>When you use the Air Quality screen, the ZIP code you type is sent to Apple's location lookup (to turn it into a location) and to the Open-Meteo air-quality service (to get the current reading for that location). Nothing else goes with it: not your name, not your health records, and no identifier for you or your device. Those services have their own privacy practices, and we don't control them.</p>
@@ -92,16 +98,16 @@
 </ul>
 
 <h2>Reminders</h2>
-<p>Medication reminders are scheduled and shown by your iPhone. They are never sent from a server, so no reminder — and no medication name — travels over the internet. If you would rather a medication name not appear on your lock screen, Settings has a switch that replaces it with a general reminder instead.</p>
+<p>Medication reminders are scheduled and shown by your iPhone. They are never sent from a server, so no reminder, and no medication name, travels over the internet. If you would rather a medication name not appear on your lock screen, Settings has a switch that replaces it with a general reminder instead.</p>
 
 <h2>Camera</h2>
 <p>The camera is used only if you choose to scan a prescription label, so you don't have to type the details. The text is read on your device, and nothing is saved until you confirm what it found. If you add a photo to a medication, that photo is stored with it on your iPhone.</p>
 
 <h2>Links to other websites</h2>
-<p>Some screens link out — to the American Lung Association, to airlines, and to medication manufacturers. Those pages open in a browser view inside the app, and once you're there you're on that organization's website under their privacy policy, not ours. My COPD Buddy is not affiliated with, endorsed by, or sponsored by any of them.</p>
+<p>Some screens link out, to the American Lung Association, to airlines, and to medication manufacturers. Those pages open in a browser view inside the app, and once you're there you're on that organization's website under their privacy policy, not ours. My COPD Buddy is not affiliated with, endorsed by, or sponsored by any of them.</p>
 
 <h2>Sharing your own information</h2>
-<p>If you use a share option in the app — for example to send your medication list to a family member or your care team — you choose the recipient and the app you send it with. That is entirely under your control, and it happens only when you ask for it.</p>
+<p>If you use a share option in the app, for example to send your medication list to a family member or your care team, you choose the recipient and the app you send it with. That is entirely under your control, and it happens only when you ask for it.</p>
 
 <h2>Children</h2>
 <p>My COPD Buddy is intended for adults managing their own COPD, or for someone helping them. It is not directed to children under 13, and we do not knowingly collect information from children.</p>
@@ -110,13 +116,13 @@
 <p>You can delete medications, contacts, saved questions and recorded doses at any time from the screen where they appear. Deleting the app from your iPhone removes everything it has saved. Because none of it was ever sent to us, there is nothing for us to delete on our end and no request you need to make.</p>
 
 <h2>Changes to this policy</h2>
-<p>If the app ever starts doing something this page does not describe — adding an account, a sync service, analytics, or anything else that sends your information somewhere — this policy will be updated before that version ships, and the date at the top will change.</p>
+<p>If the app ever starts doing something this page does not describe, adding an account, a sync service, analytics, or anything else that sends your information somewhere, this policy will be updated before that version ships, and the date at the top will change.</p>
 
 <h2>Contact</h2>
 <p>Questions about this policy or about the app: <a href="mailto:Support-mycopdbuddy@skillquestapps.com">Support-mycopdbuddy@skillquestapps.com</a>.</p>
 
 <footer>
-  My COPD Buddy provides general education and organization tools. It does not diagnose conditions, replace professional medical advice, or tell you to change your medications, oxygen settings, or treatment. In an emergency, call your local emergency number — 911 in the United States.
+  My COPD Buddy provides general education and organization tools. It does not diagnose conditions, replace professional medical advice, or tell you to change your medications, oxygen settings, or treatment. In an emergency, call your local emergency number: 911 in the United States.
 </footer>
 
 </body>
